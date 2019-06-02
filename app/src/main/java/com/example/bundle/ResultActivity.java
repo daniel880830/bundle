@@ -23,12 +23,12 @@ public class ResultActivity extends AppCompatActivity {
         NumberFormat nf = NumberFormat.getInstance();
         Bundle bundle = getIntent().getExtras();
         int programming = bundle.getInt("programming");
-        int dataStructure = bundle.getInt("dataStructure");
-        int algorithm = bundle.getInt("dataStructure");
-        int sum = programming + dataStructure + algorithm;
+        int data = bundle.getInt("data");
+        int algorithm = bundle.getInt("algorithm");
+        int sum = programming + data + algorithm;
         double average = sum/3.0;
         String text = "programming = "+ programming +
-                "\ndataStructure = " + dataStructure +
+                "\ndatastructure = " + data +
                 "\nalgorithm = "+ algorithm +
                 "\nsum = " + sum +
                 "\naverage = " + nf.format(average);
@@ -64,6 +64,9 @@ public class ResultActivity extends AppCompatActivity {
         builder.setTitle(title);
         builder.setIcon(pic);
         builder.show();
+        builder.setPositiveButton("OK",null);
+        builder.setNegativeButton("Cancel",null);
+        builder.setNeutralButton("Nothing",null);
     }
 
     public void onBackClick(View view){
